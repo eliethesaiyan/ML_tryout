@@ -1,4 +1,5 @@
 #Numpy exploration with Python 2.7
+from math import sqrt
 
 #1. Numbers
 title="Number title"
@@ -87,6 +88,68 @@ print  nums
 even_num_to_square={x:x**2 for  x in nums if x%2==0}
 print even_num_to_square
 
+#5. Sets
+title="Working with sets"
+
+print title
+print "Square roots from nums list using comprehension"
+sq_root={sqrt(x) for x in nums}
+print sq_root
+
+#6 tuples
+
+title="Working with tuples"
+print title
+tup={(x,x*2): x for x in nums} 
+print tup
+t=(12,24)
+print type(t)
+print tup[(5,10)]
+
+#7. Functions
+title="Working with functions"
+def sign(x):
+    if x>0:
+       print "The number is positive"
+    elif x<0:
+       print "The number is negative"
+    else:
+       print "Zero was given as argument"
 
 
+for x in [-1,0,1]:
+    print sign(x)
 
+print "Function with default arguments"
+
+def hello(name,loud=False):
+    if loud:
+       print "Hello %s!" %name.upper()
+    else:
+       print "Hello %s!" %name
+
+print hello("Bob")
+print hello ("Bob",True)
+
+
+#8. Classes
+title="Working with classes"
+
+class Greeter(object):
+      
+      #Constructor
+      def __init__(self,name):
+          self.name=name
+     
+
+      def greet(self,loud=False):
+          if loud:
+             print "Hello %s "% self.name.upper()
+          else:
+             print "Hello %s "% self.name
+
+g=Greeter("Fred")
+print g.greet(True)
+print g.greet()
+              
+          
