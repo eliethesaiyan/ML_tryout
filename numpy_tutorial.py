@@ -194,7 +194,7 @@ title="Indexing array and slicing them"
 print title
 a=np.array([[1,2,3],[4,5,6],[7,8,9]])
 print a
-b=a[:2,1:3]
+b=a[:2,1:2]
 print "sliced b=a[:2,1:3]"
 print b
 
@@ -237,6 +237,84 @@ title="Indexing using boolean values"
 print title
 bool_idx=(c>2)
 print bool_idx
+
+#14 numpy datatypes
+title="specifying datatypes of arrays"
+print title
+d=np.array([1,2,7])
+print d.dtype
+print d.shape
+print "Can be specified on creation"
+d=np.array([1,2,3],dtype=np.float64)
+print d
+#15 numpy array  maths"
+title="maths with numpy"
+print title
+x=np.array([[1,2,4],[1,2,4],[1,4,4]],dtype=np.float64)
+y=np.array([[4,2,5],[1,2,3],[1,2,3]],dtype=np.float64)
+
+print x+y
+print np.add(x,y)
+print np.subtract(x,y)
+
+v=np.array([9,10])
+w=np.array([11,12])
+print "dot production of "
+print v
+print v.dot(w)
+print "sum of all element using np.sum(x)"
+print np.sum(x)
+print "Sum all elements on rows[x,axis=0]"
+print np.sum(x,0)
+print "Sum all elements on columns[x,axis=1]"
+print np.sum(x,1)
+
+print "Making transposee of y"
+print y
+print y.T
+print "Broadcasting :Adding a vector to each row of the array"
+broad=np.empty_like(x)
+for i  in range(2):
+    print "original"
+    broad[i,:]=x[i,:]+d
+    print x[i,:]
+    print "broadcasted"
+    print broad[i,:]
+   
+
+
+print "Tiling "
+
+xx=np.tile(d,(3,1))
+
+print xx
+
+print xx+x
+
+print "reshaping"
+
+v=np.array([1,2,3])
+w=np.array([4,5])
+print "V and w initial content"
+print v,w
+
+print "After reshape of v"
+print np.reshape(v,(3,1))*w
+z=np.array([[1,2,3],[2,3,4]])
+
+print (z.T+w).T
+print "original z"
+print z
+
+print "broadcasted z"
+print z+np.reshape(w,(2,1))
+
+
+
+
+
+
+
 
 
 
